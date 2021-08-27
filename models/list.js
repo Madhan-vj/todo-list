@@ -11,10 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      List.belongsTo(models.Todo, {foreignKey: 'todoId', as: 'todo'})
     }
   };
   List.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    todoId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'List',
