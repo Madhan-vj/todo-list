@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   List.init({
     name: DataTypes.STRING,
     todoId: DataTypes.INTEGER,
-    isCompleted: DataTypes.BOOLEAN
+    iscompleted: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'List',

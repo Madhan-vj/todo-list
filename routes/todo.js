@@ -28,7 +28,9 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:id', async(req,res) => {
- await db.Todo.update({
+ await db.Todo.update(
+  { name: req.body.name},
+  {
   where: {
    id: req.params.id
   }

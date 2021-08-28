@@ -18,7 +18,8 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
  await db.List.create({
   name: req.body.name,
-  todoId: req.body.todoId
+  todoId: req.body.todoId,
+  iscompleted: req.body.iscompleted
  }).then(result => {
   res.send(result);
  }).catch(err => {
@@ -29,11 +30,17 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:id', async(req,res) => {
- await db.List.update({
+ await db.List.update(
+  { name: req.body.name,
+   todoId: req.body.todoId,
+   iscompleted: req.body.iscompleted
+  },
+  {
   where: {
    id: req.params.id
   }
  }).then(result => {
+  console.log(result,"<<<===");
   res.status(200).json({
    message: "updated"
   }).catch(err => {
