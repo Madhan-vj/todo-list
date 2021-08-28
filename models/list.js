@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   List.init({
     name: DataTypes.STRING,
-    todoId: DataTypes.INTEGER
+    todoId: DataTypes.INTEGER,
+    isCompleted: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'List',

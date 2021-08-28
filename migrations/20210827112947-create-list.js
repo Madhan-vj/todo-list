@@ -14,6 +14,9 @@ module.exports = {
       todoId: {
         type: Sequelize.INTEGER
       },
+      iscompleted: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
